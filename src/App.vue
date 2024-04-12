@@ -37,7 +37,7 @@ const menuIsOpen = ref(false)
     <nav>
       <ul>
         <li>
-          <RouterLink to="/" class="text-red-500 underline"> Accueil </RouterLink>
+          <RouterLink to="index.vue" class="text-red-500 underline"> Accueil </RouterLink>
         </li>
       </ul>
     </nav>
