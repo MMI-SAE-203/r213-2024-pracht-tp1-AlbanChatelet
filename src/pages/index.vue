@@ -11,7 +11,7 @@
   <button @click="maVar = true">Montrer</button>
   <button @click="maVar = !maVar">Bascule</button>
   
-  <h1 v-show="maVar" class="text-2xl">Quand j'arrive au lundi</h1>
+  <h1 v-show="maVar" class="text-2xl">TP du vendredi, bienvenue</h1>
 
   <section>
     <button class="text-xl" @pointerdown="sectionOpen = 1">bouton 1</button>
