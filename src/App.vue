@@ -1,11 +1,12 @@
-<script setup lang="ts" const menuIsOpen = ref(false)>
-import { onErrorCaptured } from 'vue'
+<script setup lang="ts">
+import { onErrorCaptured, ref, } from 'vue'
 import { RouterLink, RouterView } from 'vue-router/auto'
 
 onErrorCaptured((err, instance, info) => {
   console.error('erreur : ', err, '\ninfo : ', info, '\ncomposant : ', instance)
   return true
 })
+const menuIsOpen = ref(false)
 </script>
 
 <template>
@@ -17,7 +18,7 @@ onErrorCaptured((err, instance, info) => {
               >
                 menu
               </button>
-              <!-- nav#mainNav>ul>li*3>a[href="#"]{item $} -->
+              
               <nav id="mainNav">
                 <ul>
                   <li><a href="#">item 1</a></li>
