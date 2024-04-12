@@ -1,6 +1,7 @@
 <script setup lang="ts">
   import { ref } from 'vue';
 
+  const sectionOpen = ref(0)
   const sectionsData = [
     {
       label: 'bouton 1',
@@ -9,7 +10,7 @@
       rerum magni laudantium quod excepturi laboriosam, 
       ex modi debitis harum reprehenderit eaque quam ut
       ea molestiae. Id, cum dolor!`,
-      isOpen: ref(false)
+     
     },
     {
       label: 'bouton 2',
@@ -18,7 +19,7 @@
       consectetur unde minima, ipsum eligendi inventore id
       labore, laborum rerum laboriosam corrupti iste.
       Distinctio, perspiciatis!`,
-      isOpen: ref(false)
+     
     },
     {
       label: 'bouton 3',
@@ -27,7 +28,7 @@
       quia sit eligendi ex culpa eos, alias magnam molestiae
       id modi accusantium ipsa eveniet accusamus. Tempora 
       quis corporis et nam.`,
-      isOpen: ref(false)
+     
     }
   ]
 </script>
@@ -35,15 +36,11 @@
 <template>
   <h1>Données</h1>
   <section v-for="(section, key) of sectionsData" :key="key">
-    <button class="text-xl" @pointerdown="toggleSection(key)">{{ section.label }}</button>
-    <p v-show="section.isOpen">{{ section.texte }}</p>
+    <button class="text-xl" @pointerdown="sectionOpen = key+1">{{ section.label }}</button>
+    <p v-show="sectionOpen === key+1">{{ section.texte }}</p>
   </section>
 </template>
 
-<script lang="ts">
-  const toggleSection = (key: number) => {
-    sectionsData[key].isOpen.value = !sectionsData[key].isOpen.value;
-  };
-</script>
+
 
 
