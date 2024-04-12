@@ -27,9 +27,9 @@ const menuIsOpen = ref(false)
   >
     <nav id="mainNav" v-show="menuIsOpen">
       <ul>
-        <li><a href="#">item 1</a></li>
-        <li><a href="#">item 2</a></li>
-        <li><a href="#">item 3</a></li>
+        <li><RouterLink to="/" class="text-red-500 underline"> Accueil </RouterLink></li>
+        <li><RouterLink to="/donnees" class="text-red-500 underline"> Données </RouterLink></li>
+        
       </ul>
     </nav>
   </Transition>
@@ -37,7 +37,7 @@ const menuIsOpen = ref(false)
     <nav>
       <ul>
         <li>
-          <RouterLink to="index.vue" class="text-red-500 underline"> Accueil </RouterLink>
+          
         </li>
       </ul>
     </nav>
