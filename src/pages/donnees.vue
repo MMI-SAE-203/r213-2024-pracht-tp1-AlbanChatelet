@@ -8,7 +8,8 @@
       consectetur adipisicing elit. Inventore animi dolore,
       rerum magni laudantium quod excepturi laboriosam, 
       ex modi debitis harum reprehenderit eaque quam ut
-      ea molestiae. Id, cum dolor!`
+      ea molestiae. Id, cum dolor!`,
+      isOpen: ref(false)
     },
     {
       label: 'bouton 2',
@@ -16,7 +17,8 @@
       Officia ut ab dolores quos dolorem accusamus ad,
       consectetur unde minima, ipsum eligendi inventore id
       labore, laborum rerum laboriosam corrupti iste.
-      Distinctio, perspiciatis!`
+      Distinctio, perspiciatis!`,
+      isOpen: ref(false)
     },
     {
       label: 'bouton 3',
@@ -24,7 +26,8 @@
       odit reprehenderit sint pariatur at voluptatum, cumque
       quia sit eligendi ex culpa eos, alias magnam molestiae
       id modi accusantium ipsa eveniet accusamus. Tempora 
-      quis corporis et nam.`
+      quis corporis et nam.`,
+      isOpen: ref(false)
     }
   ]
 </script>
@@ -32,8 +35,15 @@
 <template>
   <h1>Données</h1>
   <section v-for="(section, key) of sectionsData" :key="key">
-    <pre class="font-mono">key : {{ key }}</pre>
-    <pre class="font-mono">label : {{ section.label }}</pre>
-    <pre class="font-mono">texte : {{ section.texte }}</pre>
+    <button class="text-xl" @pointerdown="toggleSection(key)">{{ section.label }}</button>
+    <p v-show="section.isOpen">{{ section.texte }}</p>
   </section>
 </template>
+
+<script lang="ts">
+  const toggleSection = (key: number) => {
+    sectionsData[key].isOpen.value = !sectionsData[key].isOpen.value;
+  };
+</script>
+
+
