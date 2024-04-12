@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup lang="ts" const menuIsOpen = ref(false)>
 import { onErrorCaptured } from 'vue'
 import { RouterLink, RouterView } from 'vue-router/auto'
 
